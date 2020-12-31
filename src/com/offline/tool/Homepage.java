@@ -41,10 +41,7 @@ public class Homepage extends JFrame {
 
 	public Homepage() {
 		try {
-			String inf = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
-
-			setLookAndFeel(inf);
-
+			setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
