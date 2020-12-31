@@ -3,4 +3,13 @@
   <groupId>offline-tool</groupId>
   <artifactId>offline-tool</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  
+  <dependencies>
+  <dependency>
+  <groupId>org.java.net.substance</groupId>
+  <artifactId>substance</artifactId>
+  <version>6.0</version>
+</dependency>
+  </dependencies>
 </project>

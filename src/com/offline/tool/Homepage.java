@@ -5,6 +5,7 @@ import static java.awt.Color.GREEN;
 import static java.awt.Color.RED;
 import static java.lang.System.exit;
 import static javax.swing.BorderFactory.createTitledBorder;
+import static javax.swing.SwingUtilities.invokeLater;
 import static javax.swing.UIManager.setLookAndFeel;
 
 import java.awt.Color;
@@ -12,6 +13,13 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 
 import javax.swing.*;
+
+import org.pushingpixels.substance.api.skin.SubstanceBusinessBlackSteelLookAndFeel;
+import org.pushingpixels.substance.api.skin.SubstanceCremeCoffeeLookAndFeel;
+import org.pushingpixels.substance.api.skin.SubstanceCremeLookAndFeel;
+import org.pushingpixels.substance.api.skin.SubstanceGeminiLookAndFeel;
+import org.pushingpixels.substance.api.skin.SubstanceGraphiteLookAndFeel;
+import org.pushingpixels.substance.api.skin.SubstanceNebulaBrickWallLookAndFeel;
 
 /**
  * 
@@ -40,11 +48,6 @@ public class Homepage extends JFrame {
 	private static final String STOPPED = "Stopped";
 
 	public Homepage() {
-		try {
-			setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 		initComponents();
 	}
 
@@ -135,7 +138,15 @@ public class Homepage extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		new Homepage();
+		setDefaultLookAndFeelDecorated(true);
+		invokeLater(()-> {
+			 try {
+		          setLookAndFeel(new SubstanceBusinessBlackSteelLookAndFeel());
+		        } catch (Exception e) {
+		          e.printStackTrace();
+		        }
+		        new Homepage();
+		});		
 	}
 
 	private JLabel buildStatusLabel(String labelName, int y) {
